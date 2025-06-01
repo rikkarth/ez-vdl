@@ -1,0 +1,23 @@
+{
+  "python.testing.unittestArgs": ["-v", "-s", "./tests", "-p", "test_*.py"],
+  "material-icon-theme.folders.customClones": [
+    {
+      "name": "research",
+      "base": "scripts",
+      "color": "light-blue-500",
+      "lightColor": "light-blue-700",
+      "folderNames": ["research"]
+    }
+  ],
+  "material-icon-theme.folders.associations": {
+    "sample": "test"
+  },
+  "python.testing.pytestEnabled": false,
+  "python.testing.unittestEnabled": true,
+  "python.analysis.extraPaths": ["./src"],
+  "files.trimTrailingWhitespace": true,
+  "editor.defaultFormatter": "ms-python.black-formatter",
+  "editor.formatOnSave": true,
+  "editor.fontSize": 14,
+  "isort.args": ["--profile", "black"]
+}

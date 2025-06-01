@@ -1,0 +1,7 @@
+### General
+yt_dlp
+
+### Dev
+mypy
+yt-dlp-types
+pyinstaller
