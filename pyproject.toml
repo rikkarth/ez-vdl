@@ -1,0 +1,50 @@
+[build-system]
+requires = ["setuptools>=80.9.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "rmvdl"
+version = "0.1.0"
+description = "A tool to download video s from X by supplying the URL of the post containing the video."
+authors = [{ name = "Ricardo Mendes", email = "ricardo.mendes@streambit.dev" }]
+readme = "README.md"
+requires-python = ">=3.13.2"
+dependencies = ["yt_dlp"]
+license = { text = "MIT" }
+keywords = ["x", "twitter", "video", "downloader", "yt-dlp"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Intended Audience :: End Users/Desktop",
+    "Topic :: Multimedia :: Video",
+    "Topic :: Utilities",
+]
+
+[project.urls]
+Homepage = "https://github.com/rikkarth/rmvdl"
+Repository = "https://github.com/rikkarth/rmvdl"
+Issues = "https://github.com/rikkarth/rmvdl/issues"
+
+
+[project.optional-dependencies]
+dev = ["mypy", "yt-dlp-types"]
+pyinstaller = ["pyinstaller"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.mypy]
+python_version = "3.13"
+files = ["src/"]
+
+[tool.black]
+target-version = ["py313"]
+line-length = 88
+
+[tool.isort]
+profile = "black"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-v"

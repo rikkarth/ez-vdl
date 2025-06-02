@@ -16,8 +16,12 @@
   "python.testing.unittestEnabled": true,
   "python.analysis.extraPaths": ["./src"],
   "files.trimTrailingWhitespace": true,
-  "editor.defaultFormatter": "ms-python.black-formatter",
-  "editor.formatOnSave": true,
-  "editor.fontSize": 14,
-  "isort.args": ["--profile", "black"]
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter",
+    "editor.formatOnSave": true,
+    "editor.fontSize": 14
+  },
+  "[toml]": {
+    "editor.defaultFormatter": "tamasfe.even-better-toml"
+  }
 }
