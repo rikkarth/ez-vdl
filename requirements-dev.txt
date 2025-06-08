@@ -3,5 +3,5 @@ yt_dlp
 
 ### Dev
 mypy
-yt-dlp-types
+yt-dlp-types>=0.0.17
 pyinstaller
