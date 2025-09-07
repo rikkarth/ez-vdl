@@ -3,13 +3,39 @@
 
 **ez-vdl** is a simple command-line tool to download videos by providing the URL containing the video. It uses [yt-dlp](https://github.com/yt-dlp/yt-dlp) under the hood for reliable video downloads.
 
-## Features
+# Features
 
-- Download videos from X by URL
+- Download videos from X via URL
 - Saves videos to a `downloads/` directory by default
 - Minimal, interactive CLI
 
-## F.A.Q.
+# Usage
+
+Run the tool from the command line:
+
+```bash
+uv run src/main.py
+```
+
+You will be prompted to enter the URL of the X post containing the video. The video will be downloaded to the `downloads/` folder, if it doesn't exist the directory will be automatically created.
+
+## Example
+
+```bash
+uv run src/main.py
+Enter the URL of the X video: https://x.com/username status/1234567890
+Downloading...
+```
+
+Or if you have built the standalone binary:
+
+```bash
+./target/dist/ez-vdl
+Enter the URL of the X video: https://x.com/username status/123456789
+Downloading...
+```
+
+# F.A.Q.
 
 <details>
 <!-- 1st Question --->
@@ -28,37 +54,20 @@
 <strong>A:</strong> Yes, over time I will extend support within the limitations of yt-dlp.
 </blockquote>
 </details>
+<br>
 
 ## Roadmap
 
 - Add support for more platforms within yt-dlp's capabilities.
 - Add native GUI support.
 
-## Development Setup
+# Development Setup
 
 This project is managed with [UV](https://docs.astral.sh/uv/) so setup should be straightforward. Clone the project and run `uv sync` to sync the project's dependencies with the environment.
 
 Environment management is done with uv which installs a local virtual environment in `.venv/`.
 
 Please read the [UV Documentation](https://docs.astral.sh/uv/) to be more familiar with the tool.
-
-## Usage
-
-Run the tool from the command line:
-
-```bash
-uv run src/main.py
-```
-
-You will be prompted to enter the URL of the X post containing the video. The video will be downloaded to the `downloads/` folder, if it doesn't exist the directory will be automatically created.
-
-## Example
-
-```bash
-uv run src/main.py
-Enter the URL of the X video: https://x.com/username status/1234567890
-Downloading...
-```
 
 ## Building a Standalone Binary with PyInstaller
 
@@ -76,7 +85,7 @@ You can create a standalone executable for `ez-vdl` using [PyInstaller](https://
 	./target/dist/ez-vdl
 	```
 
-# Licensing
+## Licensing
 
 Since `yt-dlp` powers most of this application, the licensing for this project is a downstream of `yt-dlp`'s license, which is anyways very permissive.
 
