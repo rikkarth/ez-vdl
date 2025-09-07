@@ -1,8 +1,9 @@
+from __future__ import annotations
 from yt_dlp import YoutubeDL
 import yt_dlp
 
-
 def download_x_video(url: str, output_dir: str = "./downloads"):
+
     ydl_opts: yt_dlp._Params = {
         "outtmpl": f"{output_dir}/%(title).50s.%(ext)s",
         "quiet": False,
