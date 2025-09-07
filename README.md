@@ -1,43 +1,77 @@
-# Creating a Binary with PyInstaller
 
-Follow these steps to create a standalone executable from your Python script using PyInstaller.
+# rmvdl
 
-## 1. Install PyInstaller
+**rmvdl** is a simple command-line tool to download videos from X by providing the URL of the post containing the video. It uses [yt-dlp](https://github.com/yt-dlp/yt-dlp) under the hood for reliable video downloads.
+
+## Features
+
+- Download videos from X by URL
+- Saves videos to a `downloads/` directory by default
+- Minimal, interactive CLI
+
+## F.A.Q.
+
+<details>
+<!-- 1st Question --->
+<summary><strong>Isn't this just a yt-dlp wrapper?</strong></summary>
+
+<blockquote>
+<strong>A:</strong> Yes, but it's geared specifically for URL copy-pasting one shot run usage. It simplifies the process of downloading videos from X without needing to remember yt-dlp commands.
+</blockquote>
+</details>
+
+<!-- 2nd Question --->
+<details>
+<summary><strong>Will you add support for other platforms?</strong></summary>
+
+<blockquote>
+<strong>A:</strong> Yes, over time I will extend support within the limitations of yt-dlp.
+</blockquote>
+</details>
+
+## Roadmap
+
+- Add support for more platforms within yt-dlp's capabilities.
+- Add native GUI support.
+
+## Development Setup
+
+This project is managed with [UV](https://docs.astral.sh/uv/) so setup should be straightforward. Clone the project and run `uv sync` to sync the project's dependencies with the environment.
+
+Environment management is done with uv which installs a local virtual environment in `.venv/`.
+
+Please read the [UV Documentation](https://docs.astral.sh/uv/) to be more familiar with the tool.
+
+## Usage
+
+Run the tool from the command line:
 
 ```bash
-pip install pyinstaller
+uv run src/main.py
 ```
 
-## 2. Navigate to Your Script's Directory
+You will be prompted to enter the URL of the X post containing the video. The video will be downloaded to the `downloads/` folder, if it doesn't exist the directory will be automatically created.
+
+## Example
 
 ```bash
-cd /path/to/your/script
+uv run src/main.py
+Enter the URL of the X video: https://x.com/username status/1234567890
+Downloading...
 ```
 
-## 3. Create the Executable
+## Building a Standalone Binary with PyInstaller
 
-Replace `your_script.py` with your script's filename:
+You can create a standalone executable for `rmvdl` using [PyInstaller](https://pyinstaller.org/):
 
-```bash
-pyinstaller --onefile your_script.py
-```
+1. **Build the binary**
 
-- The `--onefile` flag bundles everything into a single executable.
+	Run `./build.sh` from the project root which will create a native executable.
 
-## 4. Find Your Binary
+    After building, the executable will be in the `target/dist/` folder.
 
-After building, the executable will be in the `dist` folder:
+2. **Run the binary**
 
-```
-dist/your_script
-```
-
-## 5. Run the Binary
-
-```bash
-./dist/your_script
-```
-
----
-
-For more options, see the [PyInstaller documentation](https://pyinstaller.org/).
+	```bash
+	./target/dist/rmvdl
+	```
