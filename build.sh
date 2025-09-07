@@ -2,6 +2,6 @@
 
 pyinstaller \
 --onefile src/main.py \
---name rmvdl \
+--name ez-vdl \
 --workpath target \
 --distpath target/dist

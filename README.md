@@ -1,7 +1,7 @@
 
-# rmvdl
+# ez-vdl (Easy Video Downloader)
 
-**rmvdl** is a simple command-line tool to download videos from X by providing the URL of the post containing the video. It uses [yt-dlp](https://github.com/yt-dlp/yt-dlp) under the hood for reliable video downloads.
+**ez-vdl** is a simple command-line tool to download videos by providing the URL containing the video. It uses [yt-dlp](https://github.com/yt-dlp/yt-dlp) under the hood for reliable video downloads.
 
 ## Features
 
@@ -62,7 +62,7 @@ Downloading...
 
 ## Building a Standalone Binary with PyInstaller
 
-You can create a standalone executable for `rmvdl` using [PyInstaller](https://pyinstaller.org/):
+You can create a standalone executable for `ez-vdl` using [PyInstaller](https://pyinstaller.org/):
 
 1. **Build the binary**
 
@@ -73,5 +73,17 @@ You can create a standalone executable for `rmvdl` using [PyInstaller](https://p
 2. **Run the binary**
 
 	```bash
-	./target/dist/rmvdl
+	./target/dist/ez-vdl
 	```
+
+# Licensing
+
+Since `yt-dlp` powers most of this application, the licensing for this project is a downstream of `yt-dlp`'s license, which is anyways very permissive.
+
+While ez-vdl is licensed under MIT, many of the release files contain code from other projects with different licenses.
+
+Most notably, the PyInstaller-bundled executables include GPLv3+ licensed code, and as such the combined work is licensed under GPLv3+.
+
+Check `yt-dlp` [THIRD_PARTY_NOTICES.txt](https://github.com/yt-dlp/yt-dlp/blob/master/THIRD_PARTY_LICENSES.txt) for more details.
+
+The zipimport binary (yt-dlp), the source tarball (yt-dlp.tar.gz), and the PyPI source distribution & wheel only contain code licensed under the Unlicense.

@@ -3,8 +3,8 @@ requires = ["setuptools>=80.9.0"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "rmvdl"
-version = "0.1.1"
+name = "ez-vdl"
+version = "0.1.2"
 description = "A tool to download video s from X by supplying the URL of the post containing the video."
 authors = [{ name = "Ricardo Mendes", email = "ricardo.mendes@streambit.dev" }]
 readme = "README.md"
@@ -26,9 +26,9 @@ classifiers = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/rikkarth/rmvdl"
-Repository = "https://github.com/rikkarth/rmvdl"
-Issues = "https://github.com/rikkarth/rmvdl/issues"
+Homepage = "https://github.com/rikkarth/ez-vdl"
+Repository = "https://github.com/rikkarth/ez-vdl"
+Issues = "https://github.com/rikkarth/ez-vdl/issues"
 
 [tool.setuptools.packages.find]
 where = ["src"]
