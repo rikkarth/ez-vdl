@@ -86,6 +86,9 @@ If you have built the standalone binary:
 ## Roadmap
 
 - Add support for more platforms within yt-dlp's capabilities.
+- Add `.exe` binary support for Windows.
+- Add pipeline to create binaries for multiple platforms (Linux, Windows, MacOS) on each release.
+- Add Changelog.
 - Add native GUI support.
 
 # Development Setup
