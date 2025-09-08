@@ -1,8 +1,18 @@
+"""
+Core GUI rendering logic using Dear PyGui.
+"""
+
 from __future__ import annotations
+
+import logging
 
 import dearpygui.dearpygui as dpg  # type: ignore
 
 import vdl_ops
+
+log = logging.getLogger(__name__)
+
+__all__ = ["render_gui"]
 
 
 selected_path = ""
@@ -53,17 +63,17 @@ def _directory_selector() -> int | str:
 
 
 def _directory_selector_callback(sender, app_data):
-    print("OK was clicked.")
-    print("Sender: ", sender)
-    print("App Data: ", app_data)
+    log.debug("OK was clicked.")
+    log.debug("Sender: %s", sender)
+    log.debug("App Data: %s", app_data)
     selected_path = app_data["file_path_name"]
     dpg.set_value("selected_path_text", selected_path)
 
 
 def _cancel_callback(sender, app_data):
-    print("Cancel was clicked.")
-    print("Sender: ", sender)
-    print("App Data: ", app_data)
+    log.debug("Cancel was clicked.")
+    log.debug("Sender: %s", sender)
+    log.debug("App Data: %s", app_data)
 
 
 def _initialize_viewport(main_window_id):

@@ -38,6 +38,12 @@ def get():
         default=".",
         help="Directory to save downloaded video",
     )
+    parser.add_argument(
+        "--debug-log",
+        default=False,
+        help="Enable debug logging",
+        action="store_true",
+    )
 
     # If no arguments are provided, print help and exit
     if len(sys.argv) == 1:
