@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "ez-vdl"
-version = "0.2.0"
+version = "0.3.0"
 description = "A tool to download videos by supplying the URL of the post containing the video."
 authors = [{ name = "Ricardo Mendes", email = "ricardo.mendes@streambit.dev" }]
 readme = "README.md"
