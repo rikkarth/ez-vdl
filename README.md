@@ -7,59 +7,63 @@
 
 # Features
 
-- Download videos from X via URL
-- Saves videos to a `downloads/` directory by default
+- Download videos via URL, currently optimized for X (formerly Twitter)
 - Minimal, interactive CLI
+- Simple GUI for easy usage
+- Cross-platform (Linux, MacOS, Windows planned)
+- Standalone binary builds for easy distribution (Linux, MacOS, Windows planned)
 
 # Usage
 
 Run the tool from the command line:
 
 ```bash
+./ez-vdl [options]
+```
+
+Or directly from the source code:
+```bash
 uv run src/main.py [options]
 ```
 
-### Command-line Options
+## Command-line Options
 
 ```
-usage: main.py [-h] [-v] [-u URL] [-g] [-q] [-o OUTPUT_DIR]
+usage: main.py [-h] [-v] [-u URL] [-g] [-q] [-o OUTPUT_DIR] [--debug-log]
 
 Easy Video Downloader
 
 options:
-	-h, --help            show this help message and exit
-	-v, --version         show program's version number and exit
-	-u, --url URL         URL of the video to download
-	-g, --gui             Launch GUI
-	-q, --quiet           Only show errors
+	-h, --help                show this help message and exit
+	-v, --version             show program's version number and exit
+	-u, --url URL             URL of the video to download
+	-g, --gui                 Launch GUI (default: False)
+	-q, --quiet               Only show errors (default: False)
 	-o, --output-dir OUTPUT_DIR
-												Directory to save downloaded video
+	                          Directory to save downloaded video (default: .)
+	--debug-log               Enable debug logging (default: False)
 ```
 
-### Examples
+## Examples
 
-Download a video by URL (CLI):
+### CLI Mode
 
-```bash
-uv run src/main.py -u "https://x.com/username/status/1234567890"
-```
-
-Launch the GUI:
+Download a video via URL:
 
 ```bash
-uv run src/main.py --gui
+./ez-vdl -u "https://x.com/username/status/1234567890"
 ```
 
 Specify output directory:
 
 ```bash
-uv run src/main.py -u "<video_url>" -o /path/to/save
+./ez-vdl -u "<video_url>" -o /path/to/save
 ```
 
-If you have built the standalone binary:
+### GUI Mode
 
 ```bash
-./target/dist/ez-vdl -u "https://x.com/username/status/123456789"
+./ez-vdl --gui
 ```
 
 # F.A.Q.
@@ -81,7 +85,6 @@ If you have built the standalone binary:
 <strong>A:</strong> Yes, over time I will extend support within the limitations of yt-dlp.
 </blockquote>
 </details>
-<br>
 
 ## Roadmap
 
@@ -115,7 +118,7 @@ You can create a standalone executable for `ez-vdl` using [PyInstaller](https://
 	./target/dist/ez-vdl
 	```
 
-## Licensing
+# Licensing
 
 Since `yt-dlp` powers most of this application, the licensing for this project is a downstream of `yt-dlp`'s license, which is anyways very permissive.
 
