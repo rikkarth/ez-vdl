@@ -1,7 +1,9 @@
 
 # ez-vdl (Easy Video Downloader)
 
-**ez-vdl** is a simple command-line tool to download videos by providing the URL containing the video. It uses [yt-dlp](https://github.com/yt-dlp/yt-dlp) under the hood for reliable video downloads.
+**ez-vdl** is a simple command-line or GUI tool to download videos by providing the URL containing the video. It uses [yt-dlp](https://github.com/yt-dlp/yt-dlp) under the hood for reliable video downloads.
+
+![alt text](.github/assets/ez-vdl-ss.png)
 
 # Features
 
