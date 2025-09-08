@@ -16,25 +16,50 @@
 Run the tool from the command line:
 
 ```bash
-uv run src/main.py
+uv run src/main.py [options]
 ```
 
-You will be prompted to enter the URL of the X post containing the video. The video will be downloaded to the `downloads/` folder, if it doesn't exist the directory will be automatically created.
+### Command-line Options
 
-## Example
+```
+usage: main.py [-h] [-v] [-u URL] [-g] [-q] [-o OUTPUT_DIR]
 
-```bash
-uv run src/main.py
-Enter the URL of the X video: https://x.com/username status/1234567890
-Downloading...
+Easy Video Downloader
+
+options:
+	-h, --help            show this help message and exit
+	-v, --version         show program's version number and exit
+	-u, --url URL         URL of the video to download
+	-g, --gui             Launch GUI
+	-q, --quiet           Only show errors
+	-o, --output-dir OUTPUT_DIR
+												Directory to save downloaded video
 ```
 
-Or if you have built the standalone binary:
+### Examples
+
+Download a video by URL (CLI):
 
 ```bash
-./target/dist/ez-vdl
-Enter the URL of the X video: https://x.com/username status/123456789
-Downloading...
+uv run src/main.py -u "https://x.com/username/status/1234567890"
+```
+
+Launch the GUI:
+
+```bash
+uv run src/main.py --gui
+```
+
+Specify output directory:
+
+```bash
+uv run src/main.py -u "<video_url>" -o /path/to/save
+```
+
+If you have built the standalone binary:
+
+```bash
+./target/dist/ez-vdl -u "https://x.com/username/status/123456789"
 ```
 
 # F.A.Q.
